@@ -21,7 +21,23 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Scaffold(
         body: Container(height: 100.h,
         width: 100.w,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/splash.png"),fit: BoxFit.fill),),),
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/splash.png"),fit: BoxFit.fill),),
+        child: Column(mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text("NewsFeed",style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.w600,color: Color(0xffFFFFFF))),
+            SizedBox(height: 30.h,),
+            Padding(
+              padding:EdgeInsets.symmetric(vertical: 20.sp),
+              child: Row(mainAxisSize: MainAxisSize.min,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                    Text("Designed By",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w600,color: Color(0xff828794)),),
+                    Text(" Vivek",style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w600,color: Color(0xffFFFFFF)),),
+                ],
+              ),
+            ),
+          ],
+        ),),
       ),
     );
   }
