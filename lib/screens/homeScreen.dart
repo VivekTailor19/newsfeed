@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             Padding(
               padding: EdgeInsets.all(15.sp),
-              child: Column(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
@@ -39,14 +39,69 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(mainAxisSize: MainAxisSize.min,
                         textBaseline: TextBaseline.alphabetic,
                         children: [
-                          Text("News",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w600,color: Color(0xffFFFFFF)),),
-                          Text("Feed",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w600,color: Color(0xffFFFFFF))),
+                          Text("News",style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w600,color: Color(0xffFFFFFF)),),
+                          Text("Feed",style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w600,color: Color(0xffD7D7D8))),
                         ],
                       ),
                       Spacer(),
                       Icon(Icons.notifications_active_outlined,color: Colors.white,)
                     ],
                   ),
+                  SizedBox(height: 2.h,),
+                  Text("Good Morning! Vivek 😎",style: TextStyle(fontWeight: FontWeight.w300,color: Colors.white,fontSize: 13.sp),),
+                  SizedBox(height: 1.h,),
+                  Text("Discover Breaking News",style: TextStyle(fontWeight: FontWeight.w900,color: Colors.white,fontSize: 18.sp,wordSpacing: -2),),
+
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15.sp),
+                    child: Container(height: 11.w,width: double.infinity,
+                      child: Row(
+
+                        children: [
+                          Expanded(
+                            child: TextField(
+
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.only(bottom: 8.sp),
+                                filled: true,
+                                fillColor: Colors.white54,
+                                prefixIcon: Icon(Icons.search_rounded,color: Colors.white,),
+                                hintText: "Find Breaking News",
+                                hintStyle: TextStyle(color: Colors.white),
+
+                                enabled: true,
+                                enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(2.w)),
+                                focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(2.w)),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 1.w,),
+                          Container(height: 11.w,width: 11.w,
+                            alignment: Alignment.center,
+                            child: Icon(Icons.sort_rounded,color: Colors.white,size: 25.sp,),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.w),color: Colors.white54),)
+                        ],
+                      ),
+                    ),
+                  ),
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    Text("Breaking News 🔥",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15.sp,color: Colors.white),),
+                    Text("View All",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,color: Colors.white),),
+                  ],),
+                  SizedBox(height: 2.h,),
+
+                  Container(height: 78.w,width: 78.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.sp),
+                    color: Colors.red,
+                  ),)
+
+                  
+                  
+
                 ],
               ),
             ),
