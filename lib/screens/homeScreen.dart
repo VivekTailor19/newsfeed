@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return SafeArea(
       child: FutureBuilder(
-        future: newsF!.loadNews("ca"),
+        future: newsF!.loadNews("in"),
         builder: (context, snapshot) {
 
           if(snapshot.hasError)
