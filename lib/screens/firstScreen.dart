@@ -24,6 +24,8 @@ class _First_ScreenState extends State<First_Screen> {
 
     return SafeArea(
       child: Scaffold(
+
+        body: newsT!.screens[newsT!.currentindex],
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             selectedIconTheme: IconThemeData(color: Color(0xff151924),size: 15.sp),
