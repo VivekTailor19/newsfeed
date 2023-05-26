@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffEFEFEB),
         body: Stack(
           children: [
 
@@ -94,11 +95,57 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],),
                   SizedBox(height: 2.h,),
 
-                  Container(height: 78.w,width: 78.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.sp),
-                    color: Colors.red,
-                  ),)
+                  Container(height: 70.w,
+
+                    child: ListView.builder(
+                      itemCount:5,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                      return Container(height: 70.w,width: 70.w,
+                        margin: EdgeInsets.only(right: 10.w),
+                        decoration: BoxDecoration(color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.sp),
+                        ),
+                        child: Padding(
+                          padding:  EdgeInsets.all(15.sp),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(height: 30.w,width: 60.w,
+                                decoration: BoxDecoration(color: Colors.amber,
+                                  borderRadius: BorderRadius.circular(20.sp),
+                                ),),
+                              Text("News \ntitle Data\nData",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
+                              Text("News channel name",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 11.sp),),
+                              Spacer(),
+                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("2 Hours ago",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11.sp,color: Colors.black26),),
+                                  CircleAvatar(radius: 4.w,backgroundImage: AssetImage("assets/images/logosmall.png"),)
+                                ],
+                              )
+
+                            ],
+                          ),
+                        ),
+                      );
+                      },
+                    ),
+                  ),
+
+                  SizedBox(height: 2.h,),
+
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 1.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Category News",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15.sp,),),
+                        Text("View All",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),),
+                      ],),
+                  ),
+
+
 
                   
                   
