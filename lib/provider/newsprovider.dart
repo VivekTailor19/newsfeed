@@ -8,7 +8,13 @@ class NewsProvider extends ChangeNotifier
   Future<NewsModel> loadNews(String? cou)
   async {
     return await News_API.news_api.get_api(cou);
+    notifyListeners();
+  }
 
+  int currentindex = 0;
+  void changeBottomTab(int index)
+  {
+    currentindex = index;
     notifyListeners();
   }
 
