@@ -37,10 +37,10 @@ class _First_ScreenState extends State<First_Screen> {
             },
 
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.home_filled),),
-              BottomNavigationBarItem(icon: Icon(Icons.explore_rounded),),
-              BottomNavigationBarItem(icon: Icon(Icons.bookmark_rounded),),
-              BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),),
+              BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.explore_rounded),label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.bookmark_rounded),label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),label: ""),
             ],
         ),
 

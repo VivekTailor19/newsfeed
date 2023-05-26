@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:news_app/model/newsModel.dart';
 import 'package:news_app/news_api/news_api.dart';
+import 'package:news_app/screens/homeScreen.dart';
+import 'package:news_app/screens/splashScreen.dart';
 
 class NewsProvider extends ChangeNotifier
 {
@@ -17,6 +19,13 @@ class NewsProvider extends ChangeNotifier
     currentindex = index;
     notifyListeners();
   }
+
+  List<Widget> screens = [
+    HomeScreen(),
+    SplashScreen(),
+    HomeScreen(),
+    HomeScreen(),
+  ];
 
 
 }
