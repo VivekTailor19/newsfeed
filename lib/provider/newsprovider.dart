@@ -22,7 +22,8 @@ class NewsProvider extends ChangeNotifier
 
   List<Widget> screens = [
     HomeScreen(),
-    SplashScreen(),
+    HomeScreen(),
+
     HomeScreen(),
     HomeScreen(),
   ];
