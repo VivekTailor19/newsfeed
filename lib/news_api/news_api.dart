@@ -10,7 +10,6 @@ class News_API
   async {
     String apilink = "https://newsapi.org/v2/top-headlines?country=$country&category=business&apiKey=3c003fea7982479aa7350cb4b3f9b806";
     var response = await http.get(Uri.parse(apilink));
-
     var jsondata = jsonDecode(response.body);
 
     return NewsModel.fromJson(jsondata);
