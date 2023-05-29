@@ -161,14 +161,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text("View All",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),),
                                 ],),
                             ),
+                            Expanded(
+                              child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                itemCount: 5,
+                                itemBuilder: (context, index) {
+                                  return NewsItem(title: news.articlelist![index].title,
+                                      imgpath: news.articlelist![index].imgUrl,
+                                      author: news.articlelist![index].author);
 
-                            ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              itemCount: ,
-                              itemBuilder: (context, index) {
+                                },
+                              ),
+                            ),
 
-                             },
-                            )
+                            
 
 
 
