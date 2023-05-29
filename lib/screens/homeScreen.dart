@@ -161,7 +161,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text("View All",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),),
                                 ],),
                             ),
-                            Expanded(
+                            Container(
+                              height: 50.h,
                               child: ListView.builder(
                                 scrollDirection: Axis.vertical,
                                 itemCount: 5,
@@ -209,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3.w),
-        color: Colors.red.shade100
+
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -226,11 +227,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 2.w),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
               children: [
-                Text("$title",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
 
-                Spacer(),
+                Text("$title",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
+
+
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.end,

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -23,7 +23,6 @@ class _Intro_CountryState extends State<Intro_Country> {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(leading: IconButton(icon: Icon(Icons.navigate_next),onPressed: () => Navigator.pushNamed(context, "first"),),),
         body:GridView.builder(
           padding: EdgeInsets.all(5.w),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
