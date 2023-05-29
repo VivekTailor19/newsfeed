@@ -14,6 +14,7 @@ class _Intro_ScreenState extends State<Intro_Screen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffEFEFEB),
 
 
         body: Padding(

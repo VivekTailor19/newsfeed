@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -11,7 +12,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child:
-    Scaffold(
+      Scaffold(
+        body:Column(
+          children: [
+
+          ],
+        )
 
     ),
     );

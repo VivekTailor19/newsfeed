@@ -12,7 +12,6 @@ class NewsProvider extends ChangeNotifier
   Future<NewsModel> loadNews(String? cou)
   async {
     return await News_API.news_api.get_api(cou);
-    notifyListeners();
   }
 
   int currentindex = 0;
@@ -37,6 +36,19 @@ class NewsProvider extends ChangeNotifier
     CountryModel(name: "Canada",value: "ca"),
     CountryModel(name: "Russia",value: "ru"),
     CountryModel(name: "Japan",value: "jp"),
+    CountryModel(name: "Ukraine",value: "ua"),
+    CountryModel(name: "South Africa",value: "za"),
+    CountryModel(name: "Thailand",value: "th"),
+    CountryModel(name: "Singapore",value: "sg"),
+    CountryModel(name: "Portugal",value: "pt"),
+    CountryModel(name: "Philippines",value: "pl"),
+    CountryModel(name: "New Zealand ",value: "nz"),
+    CountryModel(name: "Netherlands",value: "nl"),
+    CountryModel(name: "UAE",value: "ae"),
+    CountryModel(name: "Australia",value: "au"),
+    CountryModel(name: "Brazil",value: "br"),
+    CountryModel(name: "Germany",value: "de"),
+    CountryModel(name: "France",value: "fr"),
   ];
 
 

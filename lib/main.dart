@@ -13,9 +13,9 @@ import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(
-      // DevicePreview(
-      //   enabled: !kReleaseMode,
-      //   builder: (context) =>
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) =>
 
         Sizer(
           builder: (context, orientation, deviceType) => MultiProvider(
@@ -25,6 +25,7 @@ void main() {
             child: MaterialApp(
               theme: ThemeData(fontFamily: "Popping"),
               debugShowCheckedModeBanner: false,
+              initialRoute: "intro2",
               routes: {
                 "/": (context) => SplashScreen(),
                 "intro":(context) => Intro_Screen(),
@@ -35,6 +36,6 @@ void main() {
             ),
           ),
         ),
-     // ),
+      ),
   );
 }
