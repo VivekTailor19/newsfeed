@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             image: DecorationImage(image: NetworkImage("${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
                                           ),),
                                         Text("${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
-                                        Text("${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 11.sp),),
+                                        Text("${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 11.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
                                         Spacer(),
                                         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
@@ -161,10 +161,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],),
                           ),
                           Container(
-                            height: 13.h,
+                            height: 11.5.h,
                             child: ListView.builder(
+                              physics: BouncingScrollPhysics(),
+                              reverse: true,
                               scrollDirection: Axis.vertical,
-                              itemCount: 5,
+                              itemCount: 8,
                               itemBuilder: (context, index) {
                                 return NewsItem(title: news.articlelist![index].title,
                                     imgpath: news.articlelist![index].imgUrl,
@@ -237,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
-                    Text("  $author",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 15.sp),),
+                    Text("  $author",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
 
                   ],
                 )
