@@ -37,7 +37,7 @@ class _Intro_ScreenState extends State<Intro_Screen> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20.sp),
                 child: GestureDetector(
-                  onTap: () => Navigator.pushReplacementNamed(context, "first"),
+                  onTap: () => Navigator.pushReplacementNamed(context, "intro2"),
                   child: Container(height: 6.h,width: double.infinity,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.h),
                       color: Color(0xff151924),
