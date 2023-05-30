@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../provider/newsprovider.dart';
+import '../../provider/newsprovider.dart';
 
 class Intro_Country extends StatefulWidget {
   const Intro_Country({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _Intro_CountryState extends State<Intro_Country> {
         body:SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 15.h,
+              SizedBox(height: 12.h,
 
                   child: Center(
                     child: Column(

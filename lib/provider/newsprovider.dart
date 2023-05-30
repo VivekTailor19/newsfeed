@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:news_app/model/newsModel.dart';
 import 'package:news_app/news_api/news_api.dart';
+import 'package:news_app/screens/discover.dart';
 import 'package:news_app/screens/homeScreen.dart';
-import 'package:news_app/screens/splashScreen.dart';
+import 'package:news_app/screens/starting_screens/splashScreen.dart';
 
 import '../model/country_model.dart';
 
@@ -23,8 +24,7 @@ class NewsProvider extends ChangeNotifier
 
   List<Widget> screens = [
     HomeScreen(),
-    HomeScreen(),
-
+    DiscoverScreen(),
     HomeScreen(),
     HomeScreen(),
   ];

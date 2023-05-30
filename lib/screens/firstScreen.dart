@@ -33,7 +33,6 @@ class _First_ScreenState extends State<First_Screen> {
 
             currentIndex: newsT!.currentindex,
 
-
             onTap: (value) {
               return newsF!.changeBottomTab(value);
             },
