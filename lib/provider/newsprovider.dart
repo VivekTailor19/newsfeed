@@ -5,6 +5,7 @@ import 'package:news_app/screens/discover.dart';
 import 'package:news_app/screens/homeScreen.dart';
 import 'package:news_app/screens/starting_screens/splashScreen.dart';
 
+import '../model/category_model.dart';
 import '../model/country_model.dart';
 
 class NewsProvider extends ChangeNotifier
@@ -49,6 +50,16 @@ class NewsProvider extends ChangeNotifier
     CountryModel(name: "Brazil",value: "br"),
     CountryModel(name: "Germany",value: "de"),
     CountryModel(name: "France",value: "fr"),
+  ];
+
+  List<CategoryModel> categories = [
+    CategoryModel(title: "Business",value:"business" ),
+    CategoryModel(title: "Entertainment",value:"entertainment" ),
+    CategoryModel(title: "General",value:"general" ),
+    CategoryModel(title: "Health",value:"health" ),
+    CategoryModel(title: "Science",value:"science" ),
+    CategoryModel(title: "Sports",value:"sports" ),
+    CategoryModel(title: "Technology",value:"technology" ),
   ];
 
 

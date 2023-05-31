@@ -56,18 +56,27 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
               child: Column(
                 children: [
+                             //business
+                            // entertainment
+                            // general
+                            // health
+                            // science
+                            // sports
+                            // technology
                   Container(
                     child: TabBar(tabs: [
-                      Tab(icon: Icon(Icons.directions_car,)),
-                      Tab(icon: Icon(Icons.directions_transit)),
-                      Tab(icon: Icon(Icons.directions_bike)),
-                      Tab(icon: Icon(Icons.directions_car)),
-                      Tab(icon: Icon(Icons.directions_transit)),
-                      Tab(icon: Icon(Icons.directions_bike)),
-                      Tab(icon: Icon(Icons.search)),
+                      Tab(text: "Business",),
+                      Tab(text: "Entertainment"),
+                      Tab(text: "General"),
+                      Tab(text: "Health"),
+                      Tab(text: "Science"),
+                      Tab(text: "Sports"),
+                      Tab(text: "Technology"),
 
                     ],isScrollable: true,
-                      labelColor: Colors.red,
+                      indicatorColor: Color(0xff151924),
+
+                      labelColor: Color(0xff151924),
                     ),
                   ),
                   SizedBox(height: 50,),
@@ -100,4 +109,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
       ),
     );
   }
+
+
 }
