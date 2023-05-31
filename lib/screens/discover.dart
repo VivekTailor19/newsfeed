@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/tabbar_Data.dart';
 import 'package:sizer/sizer.dart';
 
 class DiscoverScreen extends StatefulWidget {
@@ -82,16 +83,16 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                   SizedBox(height: 50,),
 
                   Container(
-                    height: 150,width: 250,
+                    width: 100.w,
                     child: TabBarView(
                       children: [
-                        Icon(Icons.directions_car),
-                        Icon(Icons.directions_transit),
-                        Icon(Icons.directions_bike),
-                        Icon(Icons.directions_car),
-                        Icon(Icons.directions_transit),
-                        Icon(Icons.directions_bike),
-                        Icon(Icons.search)
+                        TabbarData(),
+                        TabbarData(),
+                        TabbarData(),
+                        TabbarData(),
+                        TabbarData(),
+                        TabbarData(),
+                        TabbarData(),
 
                       ],
                     ),
