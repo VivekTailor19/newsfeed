@@ -57,13 +57,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
               child: Column(
                 children: [
-                             //business
-                            // entertainment
-                            // general
-                            // health
-                            // science
-                            // sports
-                            // technology
                   Container(
                     child: TabBar(tabs: [
                       Tab(text: "Business",),
@@ -83,7 +76,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                   SizedBox(height: 50,),
 
                   Container(
-                    width: 100.w,
+                    width: 100.w,height: 150,
                     child: TabBarView(
                       children: [
                         TabbarData(),

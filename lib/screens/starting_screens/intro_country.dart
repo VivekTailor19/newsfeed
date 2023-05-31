@@ -49,7 +49,9 @@ class _Intro_CountryState extends State<Intro_Country> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "first",arguments: "${newsT!.countries[index].value}");
+                      newsT!.countrysel = newsT!.countries[index].value!;
+                      Navigator.pushNamed(context, "first");
+
                     },
                     child: Container(
                       height: 8.w,

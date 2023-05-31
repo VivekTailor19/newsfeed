@@ -3,7 +3,7 @@ import 'package:news_app/model/newsModel.dart';
 import 'package:news_app/news_api/news_api.dart';
 import 'package:news_app/screens/discover.dart';
 import 'package:news_app/screens/homeScreen.dart';
-import 'package:news_app/screens/starting_screens/splashScreen.dart';
+
 
 import '../model/category_model.dart';
 import '../model/country_model.dart';
@@ -11,9 +11,9 @@ import '../model/country_model.dart';
 class NewsProvider extends ChangeNotifier
 {
 
-  Future<NewsModel> loadNews(String? cou)
+  Future<NewsModel> loadNews(String? cout,String? cate)
   async {
-    return await News_API.news_api.get_api(cou);
+    return await News_API.news_api.get_api(cout,cate);
   }
 
   int currentindex = 0;
@@ -51,6 +51,9 @@ class NewsProvider extends ChangeNotifier
     CountryModel(name: "Germany",value: "de"),
     CountryModel(name: "France",value: "fr"),
   ];
+
+  String  countrysel = "in";
+  String  categorysel = "science";
 
   List<CategoryModel> categories = [
     CategoryModel(title: "Business",value:"business" ),

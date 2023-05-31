@@ -1,5 +1,6 @@
 
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -23,11 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
     newsT = Provider.of<NewsProvider>(context);
     newsF = Provider.of<NewsProvider>(context, listen: false);
 
-    String countryvalue = ModalRoute.of(context)!.settings.arguments as String;
-
     return SafeArea(
       child: FutureBuilder(
-        future: newsF!.loadNews("$countryvalue"),
+        future: newsF!.loadNews("${newsT!.countrysel}","${newsT!.categorysel}"),
         builder: (context, snapshot) {
           if(snapshot.hasError)
           {
@@ -131,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Container(height: 33.w,width: 60.w,
                                             decoration: BoxDecoration(color: Colors.amber,
                                               borderRadius: BorderRadius.circular(20.sp),
-                                              image: DecorationImage(image: NetworkImage("${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
+                                              image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl==null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
                                             ),),
                                           Text("${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
                                           Text("${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 11.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
@@ -162,6 +161,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text("View All",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),),
                                 ],),
                             ),
+
+                            CachedNetworkImage(
+                              imageUrl: "http://vigyanprasar.gov.in/isw/images/New-New-researchers-develop-synthetic-vitamin-cofactor.jpg",
+                              placeholder: (context, url) => CircularProgressIndicator(),
+                              errorWidget: (context, url, error) => Icon(Icons.error),
+                            ),
                             ListView.builder(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
@@ -173,12 +178,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 30.w, width: 100.w,
                                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(3.w),),
                                   child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Container(
                                         margin: EdgeInsets.symmetric(horizontal: 2.w),
                                         height: 26.w, width: 26.w, decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(3.w), color: Colors.yellow.shade100,
-                                            image: DecorationImage(image: NetworkImage("${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
+                                            image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl==null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
                                         ),),
 
                                       Padding(
@@ -196,11 +202,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
 
                                             Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              mainAxisAlignment: MainAxisAlignment.end,
+
+
                                               children: [
                                                 CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
-                                                Text("\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
+                                                Container(child: Text("\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis)),
 
                                               ],
                                             )
