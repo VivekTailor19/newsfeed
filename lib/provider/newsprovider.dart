@@ -65,5 +65,22 @@ class NewsProvider extends ChangeNotifier
     CategoryModel(title: "Technology",value:"technology" ),
   ];
 
+  // int tabindex = 0;
+  void changetab(int index)
+  {
+    for(int i =0; i<categories.length ; i++)
+      {
+        if(i == index)
+          {
+            categorysel = categories[i].value! ;
+            print("index = $i  , categories select = $categorysel");
+            notifyListeners();
+          }
+
+      }
+
+  }
+
+
 
 }

@@ -1,6 +1,7 @@
 class CategoryModel
 {
-  String? title,value;
+  String? title;
+  String? value;
 
   CategoryModel({this.title, this.value});
 }

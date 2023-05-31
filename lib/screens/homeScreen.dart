@@ -162,11 +162,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],),
                             ),
 
-                            CachedNetworkImage(
-                              imageUrl: "http://vigyanprasar.gov.in/isw/images/New-New-researchers-develop-synthetic-vitamin-cofactor.jpg",
-                              placeholder: (context, url) => CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
-                            ),
                             ListView.builder(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
@@ -206,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                               children: [
                                                 CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
-                                                Container(child: Text("\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis)),
+                                                Container(child: Text(news.articlelist![index].author==null?"":"\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis)),
 
                                               ],
                                             )
@@ -223,6 +218,17 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             ),
 
+
+
+
+                            // CachedNetworkImage(
+                            //   imageUrl: "http://vigyanprasar.gov.in/isw/images/New-New-researchers-develop-synthetic-vitamin-cofactor.jpg",
+                            //   placeholder: (context, url) => CircularProgressIndicator(),
+                            //   errorWidget: (context, url, error) => Icon(Icons.error),
+                            //   width: 150,
+                            //   height: 50,
+                            //   fit: BoxFit.fill,
+                            // ),
 
                           ],
                         ),
