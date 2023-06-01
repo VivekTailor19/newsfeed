@@ -94,7 +94,7 @@ class _TabbarDataState extends State<TabbarData> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
-                                    Text(news.articlelist![index].author == null ? "" : "\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
+                                    Container(width: 60.w,child: Text(news.articlelist![index].author == null ? "" : "\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis)),
 
                                   ],
                                 )

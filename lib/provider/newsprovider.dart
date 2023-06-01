@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:news_app/model/newsModel.dart';
 import 'package:news_app/news_api/news_api.dart';
+import 'package:news_app/screens/bookmark.dart';
 import 'package:news_app/screens/discover.dart';
 import 'package:news_app/screens/homeScreen.dart';
 
 
 import '../model/category_model.dart';
 import '../model/country_model.dart';
+import '../screens/profile.dart';
 
 class NewsProvider extends ChangeNotifier
 {
@@ -26,8 +28,8 @@ class NewsProvider extends ChangeNotifier
   List<Widget> screens = [
     HomeScreen(),
     DiscoverScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    BookMark(),
+    Profile(),
   ];
 
   List<CountryModel> countries = [
@@ -80,13 +82,6 @@ class NewsProvider extends ChangeNotifier
       }
 
   }
-
-
-  void ReadNewsInDetails()
-  {
-
-  }
-
 
 
 }

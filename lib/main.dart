@@ -27,7 +27,7 @@ void main() {
             child: MaterialApp(
               theme: ThemeData(fontFamily: "Popping"),
               debugShowCheckedModeBanner: false,
-              initialRoute: "intro2",
+              //initialRoute: "intro2",
               routes: {
                 "/": (context) => SplashScreen(),
                 "intro":(context) => Intro_Screen(),
