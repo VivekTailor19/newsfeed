@@ -82,5 +82,11 @@ class NewsProvider extends ChangeNotifier
   }
 
 
+  void ReadNewsInDetails()
+  {
+
+  }
+
+
 
 }

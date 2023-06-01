@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:news_app/model/newsInfo_model.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -47,45 +48,62 @@ class _TabbarDataState extends State<TabbarData> {
 
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 2.w),
-                          height: 26.w, width: 26.w, decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(3.w), color: Colors.yellow.shade100,
-                            image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl == null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
-                        ),
-                        ),
+                  return GestureDetector(
+                    onTap: () {
+                      NewsDataInDetails newsRead = NewsDataInDetails(
+                        title: news.articlelist![index].title,
+                        author: news.articlelist![index].author,
+                        url: news.articlelist![index].url,
+                        description: news.articlelist![index].description,
+                        imgUrl: news.articlelist![index].imgUrl,
+                        content: news.articlelist![index].content,
+                        sourcename: news.articlelist![index].sourceModel!.name
+                      );
 
+                      Navigator.pushNamed(context, "read",arguments: newsRead);
 
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 2.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    },
 
-
-                            children: [
-                              SizedBox(width: 60.w,
-                                child: Text(news.articlelist![index].title == null ? "" : "${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 11.sp),softWrap: true,
-                                    maxLines: 2,overflow: TextOverflow.ellipsis),
-                              ),
-
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
-                                  Text(news.articlelist![index].author == null ? "" : "\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
-
-                                ],
-                              )
-                            ],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 2.w),
+                            height: 26.w, width: 26.w, decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3.w), color: Colors.yellow.shade100,
+                              image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl == null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
                           ),
-                        ),
+                          ),
 
-                      ],
+
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 2.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+
+                              children: [
+                                SizedBox(width: 60.w,
+                                  child: Text(news.articlelist![index].title == null ? "" : "${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 11.sp),softWrap: true,
+                                      maxLines: 2,overflow: TextOverflow.ellipsis),
+                                ),
+
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
+                                    Text(news.articlelist![index].author == null ? "" : "\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
+
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+
+                        ],
+                      ),
                     ),
                   );  },
                 itemCount: news.totalResults,

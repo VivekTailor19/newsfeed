@@ -4,6 +4,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:news_app/provider/newsprovider.dart';
 import 'package:news_app/screens/firstScreen.dart';
 import 'package:news_app/screens/homeScreen.dart';
+import 'package:news_app/screens/news_details.dart';
 import 'package:news_app/screens/starting_screens/introScreen.dart';
 import 'package:news_app/screens/starting_screens/intro_country.dart';
 
@@ -33,6 +34,7 @@ void main() {
                 "intro2":(context) => Intro_Country(),
                 "first":(context) => First_Screen(),
                 "home": (context) => HomeScreen(),
+                "read":(context) => NewsReader(),
               },
             ),
           ),
