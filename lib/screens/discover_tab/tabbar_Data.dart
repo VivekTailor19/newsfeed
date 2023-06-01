@@ -4,8 +4,8 @@ import 'package:news_app/model/newsInfo_model.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../model/newsModel.dart';
-import '../provider/newsprovider.dart';
+import '../../model/newsModel.dart';
+import '../../provider/newsprovider.dart';
 
 class TabbarData extends StatefulWidget {
   const TabbarData({Key? key}) : super(key: key);
@@ -108,8 +108,6 @@ class _TabbarDataState extends State<TabbarData> {
                 itemCount: news.articlelist!.length,
                 physics: NeverScrollableScrollPhysics(),
               );
-
-
 
             }
 

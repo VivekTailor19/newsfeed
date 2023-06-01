@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:news_app/model/newsModel.dart';
 import 'package:news_app/news_api/news_api.dart';
-import 'package:news_app/screens/bookmark.dart';
-import 'package:news_app/screens/discover.dart';
-import 'package:news_app/screens/homeScreen.dart';
+import 'package:news_app/screens/bookmark_tab/bookmark.dart';
+import 'package:news_app/screens/discover_tab/discover.dart';
+import 'package:news_app/screens/home_tab/homeScreen.dart';
 
 
 import '../model/category_model.dart';
 import '../model/country_model.dart';
-import '../screens/profile.dart';
+import '../screens/profile_tab/profile.dart';
 
 class NewsProvider extends ChangeNotifier
 {

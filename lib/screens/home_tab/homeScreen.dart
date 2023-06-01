@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../model/newsModel.dart';
-import '../provider/newsprovider.dart';
+import '../../model/newsModel.dart';
+import '../../provider/newsprovider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

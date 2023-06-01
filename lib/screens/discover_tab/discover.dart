@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/provider/newsprovider.dart';
-import 'package:news_app/screens/tabbar_Data.dart';
+import 'package:news_app/screens/discover_tab/tabbar_Data.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
