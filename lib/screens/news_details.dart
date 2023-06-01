@@ -28,13 +28,13 @@ class _NewsReaderState extends State<NewsReader> {
 
                 Text("${newsRead.title}",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15.sp,),textAlign: TextAlign.justify,maxLines: 4,overflow: TextOverflow.ellipsis,),
                 SizedBox(height: 2.w,),
-                newsRead.author==null ? Text(""):Row(mainAxisAlignment: MainAxisAlignment.end,
+                newsRead.author==null ? Text(""):Row(mainAxisAlignment: MainAxisAlignment.start,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
 
                     Image.asset("assets/images/logosmall.png",fit: BoxFit.fill,height: 15.sp,width: 15.sp,color: Color(0xff151924)),
 
-                    Container(alignment: Alignment.centerRight,width:70.w,child: Text("${newsRead.author}",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),maxLines: 2,overflow: TextOverflow.ellipsis,)),
+                    Container(alignment: Alignment.centerLeft,width:70.w,child: Text("${newsRead.author}",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                   ],
                 ),
                 Padding(

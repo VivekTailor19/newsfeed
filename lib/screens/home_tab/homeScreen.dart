@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../model/newsInfo_model.dart';
 import '../../model/newsModel.dart';
 import '../../provider/newsprovider.dart';
 
@@ -114,32 +115,48 @@ class _HomeScreenState extends State<HomeScreen> {
                               itemCount:5,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
-                                return Container(height: 70.w,width: 70.w,
-                                  margin: EdgeInsets.only(right: 10.w),
-                                  decoration: BoxDecoration(color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20.sp),
-                                  ),
-                                  child: Padding(
-                                    padding:  EdgeInsets.all(15.sp),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(height: 33.w,width: 60.w,
-                                          decoration: BoxDecoration(color: Colors.amber,
-                                            borderRadius: BorderRadius.circular(20.sp),
-                                            image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl==null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
-                                          ),),
-                                        Text("${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
-                                        Text("${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 11.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
-                                        Spacer(),
-                                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("2 Hours ago",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11.sp,color: Colors.black26),),
-                                            CircleAvatar(radius: 4.w,backgroundImage: AssetImage("assets/images/logosmall.png"),)
-                                          ],
-                                        )
+                                return GestureDetector(
+                                  onTap: () {
+                                    NewsDataInDetails newsRead = NewsDataInDetails(
+                                        title: news.articlelist![index].title,
+                                        author: news.articlelist![index].author,
+                                        url: news.articlelist![index].url,
+                                        description: news.articlelist![index].description,
+                                        imgUrl: news.articlelist![index].imgUrl,
+                                        content: news.articlelist![index].content,
+                                        sourcename: news.articlelist![index].sourceModel!.name
+                                    );
 
-                                      ],
+                                    Navigator.pushNamed(context, "read",arguments: newsRead);
+
+                                  },
+                                  child: Container(height: 70.w,width: 70.w,
+                                    margin: EdgeInsets.only(right: 10.w),
+                                    decoration: BoxDecoration(color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20.sp),
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all(15.sp),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Container(height: 33.w,width: 60.w,
+                                            decoration: BoxDecoration(color: Colors.amber,
+                                              borderRadius: BorderRadius.circular(20.sp),
+                                              image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl==null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
+                                            ),),
+                                          Text("${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13.sp),maxLines: 2,overflow: TextOverflow.ellipsis),
+                                          Text("${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 11.sp),maxLines: 1,overflow: TextOverflow.ellipsis),
+                                          Spacer(),
+                                          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text("2 Hours ago",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11.sp,color: Colors.black26),),
+                                              CircleAvatar(radius: 4.w,backgroundImage: AssetImage("assets/images/logosmall.png"),)
+                                            ],
+                                          )
+
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 );
@@ -166,45 +183,61 @@ class _HomeScreenState extends State<HomeScreen> {
                             scrollDirection: Axis.vertical,
                             itemCount: 8,
                             itemBuilder: (context, index) {
-                              return Container(
-                                height: 30.w, width: 100.w,
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(3.w),),
-                                child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 2.w),
-                                      height: 26.w, width: 26.w, decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(3.w), color: Colors.yellow.shade100,
-                                          image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl==null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
-                                      ),),
+                              return GestureDetector(
+                                onTap: () {
+                                  NewsDataInDetails newsRead = NewsDataInDetails(
+                                      title: news.articlelist![index].title,
+                                      author: news.articlelist![index].author,
+                                      url: news.articlelist![index].url,
+                                      description: news.articlelist![index].description,
+                                      imgUrl: news.articlelist![index].imgUrl,
+                                      content: news.articlelist![index].content,
+                                      sourcename: news.articlelist![index].sourceModel!.name
+                                  );
 
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(vertical: 2.w),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  Navigator.pushNamed(context, "read",arguments: newsRead);
+
+                                },
+                                child: Container(
+                                  height: 30.w, width: 100.w,
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(3.w),),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.symmetric(horizontal: 2.w),
+                                        height: 26.w, width: 26.w, decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(3.w), color: Colors.yellow.shade100,
+                                            image: DecorationImage(image: NetworkImage(news.articlelist![index].imgUrl==null ? "https://www.openpr.com/wiki/images/56-400x300_4851":"${news.articlelist![index].imgUrl}"),fit: BoxFit.fill)
+                                        ),),
+
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(vertical: 2.w),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
 
-                                        children: [
+                                          children: [
 
-                                          Container(width: 60.w,
-                                            child: Text("${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 11.sp),softWrap: true,
-                                                maxLines: 2,overflow: TextOverflow.ellipsis),
-                                          ),
+                                            Container(width: 60.w,
+                                              child: Text("${news.articlelist![index].title}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 11.sp),softWrap: true,
+                                                  maxLines: 2,overflow: TextOverflow.ellipsis),
+                                            ),
 
-                                          Row(
-                                            children: [
-                                              CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
-                                              Container(width: 54.w,child: Text(news.articlelist![index].author==null?"":"\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis,)),
+                                            Row(
+                                              children: [
+                                                CircleAvatar(radius: 3.w,backgroundImage: AssetImage("assets/images/logosmall.png"),),
+                                                Container(width: 54.w,child: Text(news.articlelist![index].author==null?"":"\t${news.articlelist![index].author}",style: TextStyle(fontWeight:FontWeight.w300,fontSize: 13.5.sp),maxLines: 1,overflow: TextOverflow.ellipsis,)),
 
-                                            ],
-                                          )
-                                        ],
+                                              ],
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                    ),
 
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               );
                               // NewsItem(title: news.articlelist![index].title,
