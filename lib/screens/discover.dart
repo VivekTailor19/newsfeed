@@ -55,8 +55,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                       SizedBox(width: 1.w,),
                       Container(height: 11.w,width: 11.w,
                         alignment: Alignment.center,
-                        child: Icon(Icons.sort_rounded,color: Color(0xff151924),size: 25.sp,),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.w),color: Colors.white),)
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(2.w),color: Colors.white),
+                        child: Icon(Icons.sort_rounded,color: const Color(0xff151924),size: 25.sp,),)
                     ],
                   ),
                 ),
@@ -66,49 +66,46 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
                 length: newsF!.categories.length,
                 initialIndex: 0,
-
                 child: Column(
                   children: [
-                    Container(
-                      child: TabBar(
-                        onTap: (value) {
-                          newsF!.changetab(value);
-                        },
+                    TabBar(
+                      onTap: (value) {
+                        newsF!.changetab(value);
+                      },
 
-                        indicatorSize: TabBarIndicatorSize.label,
-                        indicatorWeight: 0.2.sp,
-                        tabs: [
-                          Tab(text: "Business",),
-                          Tab(text: "Entertainment"),
-                          Tab(text: "General"),
-                          Tab(text: "Health"),
-                          Tab(text: "Science"),
-                          Tab(text: "Sports"),
-                          Tab(text: "Technology"),
-                           ],
-                        isScrollable: true,
-                        indicatorColor: Color(0xff151924),
-
-                        labelColor: Color(0xff151924),
-                      ),
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicatorWeight: 0.2.sp,
+                      tabs: const [
+                        Tab(text: "Business",),
+                        Tab(text: "Entertainment"),
+                        Tab(text: "General"),
+                        Tab(text: "Health"),
+                        Tab(text: "Science"),
+                        Tab(text: "Sports"),
+                        Tab(text: "Technology"),
+                         ],
+                      isScrollable: true,
+                      indicatorColor: Color(0xff151924),
+                      labelColor: Color(0xff151924),
                     ),
 
-                    Container(
-                      width: 100.w,height: 100.h,
-                      child: TabBarView(
+                      Container(
+                        height: 100.h,width: 100.w,
+                        child: const TabBarView(
 
-                        children: [
-                          TabbarData(),
-                          TabbarData(),
-                          TabbarData(),
-                          TabbarData(),
-                          TabbarData(),
-                          TabbarData(),
-                          TabbarData(),
+                          children: [
+                            TabbarData(),
+                            TabbarData(),
+                            TabbarData(),
+                            TabbarData(),
+                            TabbarData(),
+                            TabbarData(),
+                            TabbarData(),
 
-                        ],
-                      ),
-                    ),
+                          ],
+                        ),
+                     ),
+
                   ],
                 ),
 

@@ -55,7 +55,7 @@ class NewsProvider extends ChangeNotifier
   ];
 
   String  countrysel = "in";
-  String  categorysel = "science";
+  String  categorysel = "business";
 
   List<CategoryModel> categories = [
     CategoryModel(title: "Business",value:"business" ),
@@ -70,16 +70,7 @@ class NewsProvider extends ChangeNotifier
   // int tabindex = 0;
   void changetab(int index)
   {
-    for(int i =0; i<categories.length ; i++)
-      {
-        if(i == index)
-          {
-            categorysel = categories[i].value! ;
-            print("index = $i  , categories select = $categorysel");
-            notifyListeners();
-          }
-
-      }
+    categorysel = categories[index].value! ;
 
   }
 

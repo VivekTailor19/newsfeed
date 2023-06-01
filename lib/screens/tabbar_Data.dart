@@ -25,8 +25,7 @@ class _TabbarDataState extends State<TabbarData> {
     newsT = Provider.of<NewsProvider>(context);
     newsF = Provider.of<NewsProvider>(context,listen:false);
 
-    return Scaffold(
-      body: FutureBuilder(
+    return FutureBuilder(
         future: newsF!.loadNews(newsT!.countrysel, newsT!.categorysel),
         builder: (context, snapshot) {
           if(snapshot.hasError)
@@ -39,12 +38,11 @@ class _TabbarDataState extends State<TabbarData> {
                   ],
                 ),
               );
-
             }
-
           else if(snapshot.hasData)
             {
               NewsModel news = snapshot.data!;
+              print(news.articlelist!.length);
 
               return ListView.builder(
                 itemBuilder: (context, index) {
@@ -105,9 +103,9 @@ class _TabbarDataState extends State<TabbarData> {
                         ],
                       ),
                     ),
-                  );  },
-                itemCount: news.totalResults,
-                shrinkWrap: true,
+                  );
+                  },
+                itemCount: news.articlelist!.length,
                 physics: NeverScrollableScrollPhysics(),
               );
 
@@ -117,8 +115,8 @@ class _TabbarDataState extends State<TabbarData> {
 
           return Center(child: CircularProgressIndicator(color: Color(0xff151924)));
         },
-      )
-    );
+      );
+
   }
 }
 

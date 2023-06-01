@@ -12,8 +12,9 @@ class News_API
     var response = await http.get(Uri.parse(apilink));
     var jsondata = jsonDecode(response.body);
 
-    return NewsModel.fromJson(jsondata);
-
+    NewsModel n1=  NewsModel.fromJson(jsondata);
+    print(n1.articlelist);
+    return n1;
   }
 }
 

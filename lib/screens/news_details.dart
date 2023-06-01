@@ -34,7 +34,7 @@ class _NewsReaderState extends State<NewsReader> {
 
                     Image.asset("assets/images/logosmall.png",fit: BoxFit.fill,height: 15.sp,width: 15.sp,color: Color(0xff151924)),
 
-                    Container(width:70.w,child: Text("${newsRead.author}",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),maxLines: 2,overflow: TextOverflow.ellipsis,)),
+                    Container(alignment: Alignment.centerRight,width:70.w,child: Text("${newsRead.author}",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15.sp,),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                   ],
                 ),
                 Padding(
