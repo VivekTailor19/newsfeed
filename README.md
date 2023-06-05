@@ -6,9 +6,9 @@
 
 https://github.com/VivekTailor19/news_app/assets/119835214/54b6a480-c6cb-4c6c-9796-272148969494
   
-<img src = "https://github.com/VivekTailor19/news_app/assets/119835214/184b2d0c-b914-4c9a-bd86-2c3c3f9d4bb1" height = "550" width = "270">  
-<img src = "https://github.com/VivekTailor19/news_app/assets/119835214/b4089442-44e8-4ca7-b6fc-67cd88b140fb" height = "550" width = "270">
-<img src = "https://github.com/VivekTailor19/news_app/assets/119835214/511fa95f-c319-4b3b-9a86-c192a6923fc4" height = "550" width = "270">
+<img src = "https://github.com/VivekTailor19/news_app/assets/119835214/184b2d0c-b914-4c9a-bd86-2c3c3f9d4bb1" height = "550" width = "280">  
+<img src = "https://github.com/VivekTailor19/news_app/assets/119835214/b4089442-44e8-4ca7-b6fc-67cd88b140fb" height = "550" width = "280">
+<img src = "https://github.com/VivekTailor19/news_app/assets/119835214/511fa95f-c319-4b3b-9a86-c192a6923fc4" height = "550" width = "280">
 <img src = "https://github.com/VivekTailor19/news_app/assets/119835214/44560e18-a667-4074-b4d3-a7ee393fdfdb" height = "550" width = "300">
 <img src = "https://github.com/VivekTailor19/news_app/assets/119835214/345de6ce-c6b4-4761-8b61-41cb27b8560b" height = "550" width = "300">
 <img src = "https://github.com/VivekTailor19/news_app/assets/119835214/1c2ba61c-4855-4f3c-9352-bd0eccae6cb2" height = "550" width = "300">
