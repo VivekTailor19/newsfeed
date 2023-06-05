@@ -90,7 +90,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
 
                       Container(
-                        height: 100.h,width: 100.w,
+                        height: 300.h,
+                        width: 100.w,
                         child: const TabBarView(
 
                           children: [
